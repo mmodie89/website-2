@@ -1,5 +1,6 @@
 ---
 title: "About"
 ---
-
-About this site
+## About Me
+My name is **M Mudassar**, and I graduated from *Agriculture University*, *Faisalabad*.
+[Kane's Free Data Science Bootcamp](https://bootcamp.davidkane.info)
