@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://mmodie89.github.io/website-2/Source-2.html</loc>
+    <lastmod>2025-06-29T20:45:07.696Z</lastmod>
+  </url>
+  <url>
     <loc>https://mmodie89.github.io/website-2/index.html</loc>
     <lastmod>2025-06-29T19:34:47.256Z</lastmod>
   </url>
   <url>
     <loc>https://mmodie89.github.io/website-2/about.html</loc>
     <lastmod>2025-06-29T20:15:54.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mmodie89.github.io/website-2/Source-1.html</loc>
+    <lastmod>2025-06-29T20:44:54.362Z</lastmod>
   </url>
 </urlset>
