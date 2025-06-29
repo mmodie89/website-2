@@ -1,0 +1,52 @@
+---
+title: "Billboard Graphic"
+execute:
+  echo: false
+---
+
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+```{r}
+#| massage: false
+#| warning: false
+billboard_long <- billboard |>
+  pivot_longer(
+    cols = starts_with("wk"),
+    names_to = "week",
+    values_to = "rank",
+    values_drop_na = TRUE
+  ) |>
+  mutate(
+    week = as.integer(str_remove(week, "wk")),
+    artist_track = paste(artist, track, sep = " - ")
+  )
+
+# Plot top 5 songs' rank over weeks
+top_songs <- billboard_long |>
+  filter(week == 1) |>
+  slice_min(rank, n = 5) |>
+  pull(artist_track)
+
+billboard_long |>
+  filter(artist_track %in% top_songs) |>
+  ggplot(aes(x = week, y = rank, color = artist_track)) +
+  geom_line(size = 1.2) +
+  scale_y_reverse(breaks = seq(1, 100, 10)) +
+  labs(
+    title = "Top Billboard Songs Trajectory (Week by Week)",
+    subtitle = "Showing the chart performance of 5 top-ranked songs",
+    x = "Week on Chart",
+    y = "Chart Rank (Lower is Better)",
+    color = "Artist - Track",
+    caption = "Source: tidyr::billboard dataset"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(size = 12)
+  )
+```
